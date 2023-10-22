@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood and Stress Predictor</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Mood and Stress Predictor</h1>
+    <form id="predict-form">
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <br>
+
+        <label for="age">Age:</label>
+        <select id="age" name="age">
+            <option value="18-30">18-30</option>
+            <option value="31-45">31-45</option>
+            <option value="46-60">46-60</option>
+            <option value="61+">61+</option>
+        </select>
+        <br>
+
+        <label for="bmi">BMI:</label>
+        <select id="bmi" name="bmi">
+            <option value="underweight">Underweight</option>
+            <option value="normal">Normal</option>
+            <option value="overweight">Overweight</option>
+            <option value="obese">Obese</option>
+        </select>
+        <br>
+
+        <label for="sleepTime">Sleep Time (hours):</label>
+        <select id="sleepTime" name="sleepTime">
+            <option value="less-than-6">Less than 6</option>
+            <option value="6-7">6-7</option>
+            <option value="8-or-more">8 or more</option>
+        </select>
+        <br>
+
+        <label for="bloodPressure">Blood Pressure (mmHg):</label>
+        <select id="bloodPressure" name="bloodPressure">
+            <option value="normal">Normal</option>
+            <option value="pre-hypertension">Pre-Hypertension</option>
+            <option value="stage-1-hypertension">Stage 1 Hypertension</option>
+            <option value="stage-2-hypertension">Stage 2 Hypertension</option>
+        </select>
+        <br>
+
+        <label for="heartRate">Heart Rate (bpm):</label>
+        <select id="heartRate" name="heartRate">
+            <option value="normal">Normal</option>
+            <option value="elevated">Elevated</option>
+            <option value="high">High</option>
+        </select>
+        <br>
+
+        <label for="stepsWalked">Steps Walked:</label>
+        <select id="stepsWalked" name="stepsWalked">
+            <option value="less-than-5000">Less than 5000</option>
+            <option value="5000-10000">5000-10000</option>
+            <option value="more-than-10000">More than 10000</option>
+        </select>
+        <br>
+
+        <button type="button" onclick="predict()">Predict</button>
+    </form>
+
+    <div id="result">
+        <p>Mood: <span id="mood"></span></p>
+        <p>Depression Risk: <span id="depressionRisk"></span></p>
+    </div>
+
+    <!-- Other HTML content above -->
+<script src="/static/script.js"></script>
+</body>
+</html>
+
