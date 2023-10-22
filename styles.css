@@ -1,12 +1,182 @@
+/* Reset default margin and padding for all elements */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set the height of the HTML and body elements to 100% */
+html, body {
+  height: 100%;
+  background-color: #EAF1FD;
+}
+
+/* Apply a background image to the body */
 body {
-  background-color: #ced4f6;
+  background-image: url('background-image.jpg'); /* Replace 'background-image.jpg' with your image file */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif; /* Use the desired font-family */
 }
 
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+/* Style the navigation bar */
+nav {
+  background-color: #D0E1FF; /* Background color for the navigation bar */
+  overflow: hidden;
 }
 
-#result {
-  font-size: 24px;
-  font-weight: bold;
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
 }
+
+nav li {
+  float: left;
+  color: #000;
+}
+
+nav a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
+font-size: 3em;
+font-family: Newsreader;
+font-weight: 700;
+/* line-height: 58.50px; */
+word-wrap: break-word
+}
+
+/* Change the color of the navigation links on hover */
+nav a:hover {
+  background-color: #ABC8FF;
+  color: black;
+  border-radius: 50px;
+}
+
+/* Style the section with the h2 and button */
+section {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 2.5em;
+  color: black;
+  font-family: Newsreader;
+  /* text-shadow: 2px 2px 4px #000; */
+}
+
+button {
+  background-color: #E9696C;
+  color: white;
+  padding: 10px 20px;
+  font-size: 2em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* research pic */
+/* #researchPic {
+  display: block; Ensure the image is treated as a block element
+  margin: 0 auto; Center horizontally using auto margins
+  position: absolute; Position absolutely to the viewport
+  top: 50%; Move the top of the image to the vertical center
+  left: 50%; Move the left of the image to the horizontal center
+  transform: translate(-50%, -50%); Center vertically and horizontally
+} */
+
+#pic-info-block{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 100% of the viewport height */
+   /* Center text within paragraphs */
+}
+
+#pic-info-block img {
+  max-width: 100%;
+  width: 60%;
+  max-height: 48%;
+}
+
+#pic-info-block div {
+  margin: 10px;
+  width: 60%;
+}
+
+#pic-info-block p {
+  padding: 5px;
+  font-size: 1.05em;
+}
+
+#pic-info-block h3 {
+  padding: 5px;
+  font-size: 1.4em;
+}
+
+#pic-info-block a {
+  font-size: 1.1em;
+}
+
+
+/* about page */
+.info-box {
+  display: flex;
+  flex-direction: column;
+  /* gap: 20px; */
+  margin-bottom: 1em;
+  justify-content: center;
+  align-items: center;
+}
+
+#What-are-we {
+  font-size: 2em;
+}
+
+.blue-box {
+  max-width: 80%;
+  flex: 1;
+  padding: 30px;
+  /* background-color: #A8E5FF;  */
+  border-radius: 10px;
+  text-align: center;
+  
+}
+
+.blue-box p{
+  padding: 0.5em;
+  max-width: 100%;
+}
+
+.green-box {
+  max-width: 80%;
+  flex: 1;
+  padding: 30px;
+  /* background-color: #A8E5A8;  */
+  border-radius: 10px;
+  text-align: center;
+}
+
+.green-box p{
+  padding: 0.5em;
+  max-width: 100%;
+}
+
+img {
+  max-width: 60%;
+  margin-top: 20px;
+}
+
