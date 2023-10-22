@@ -1,62 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>SURYA - A Ray of Hope</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood and Stress Predictor</title>
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-  <div class="container mt-5">
-    <h1 class="text-center">SURYA - A Ray of Hope</h1>
-    <div class="card mt-5">
-      <div class="card-body">
-        <form id="healthForm">
-          <div class="mb-3">
-              <label for="gender" class="form-label">Gender</label>
-              <select class="form-control" id="gender">
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-              </select>
-            </div>
-            <div class="mb-3">
-              <label for="age" class="form-label">Age</label>
-              <select class="form-control" id="age">
-                <option value="10-13">10-13</option>
-                <option value="14-17">14-17</option>
-                <option value="18-21">18-21</option>
-                <option value="22-25">22-25</option>
-              <option value="26-29">26-29</option>
-              <option value="30-33">30-33</option>
-              <option value="34-37">34-37</option>
-              <option value="38-41">38-41</option>
-              <option value="42-45">42-45</option>
-              <option value="46-49">46-49</option>
-              <option value="50+">50+</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label for="bloodPressure" class="form-label">Blood Pressure</label>
-            <input type="number" class="form-control" id="bloodPressure">
-          </div>
-          <div class="mb-3">
-            <label for="sleepTime" class="form-label">Sleep Time (hours)</label>
-            <input type="number" class="form-control" id="sleepTime">
-          </div>
-          <div class="mb-3">
-            <label for="heartRate" class="form-label">Heart Rate</label>
-            <input type="number" class="form-control" id="heartRate">
-          </div>
-          <div class="mb-3">
-            <label for="stepsWalked" class="form-label">Steps Walked</label>
-            <input type="number" class="form-control" id="stepsWalked">
-          </div>
-          <button type="button" class="btn btn-primary" onclick="submitData()">Submit</button>
-        </form>
-      </div>
-    </div>
-    <div id="result" class="mt-5"></div>
-  </div>
+    <h1>Mood and Stress Predictor</h1>
+    <form id="predict-form">
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <br>
 
-  <script src="{{ url_for('static', filename='script.js') }}"></script>
+        <label for="age">Age:</label>
+        <select id="age" name="age">
+            <option value="18-30">18-30</option>
+            <option value="31-45">31-45</option>
+            <option value="46-60">46-60</option>
+            <option value="61+">61+</option>
+        </select>
+        <br>
+
+        <label for="bmi">BMI:</label>
+        <select id="bmi" name="bmi">
+            <option value="underweight">Underweight</option>
+            <option value="normal">Normal</option>
+            <option value="overweight">Overweight</option>
+            <option value="obese">Obese</option>
+        </select>
+        <br>
+
+        <label for="sleepTime">Sleep Time (hours):</label>
+        <select id="sleepTime" name="sleepTime">
+            <option value="less-than-6">Less than 6</option>
+            <option value="6-7">6-7</option>
+            <option value="8-or-more">8 or more</option>
+        </select>
+        <br>
+
+        <label for="bloodPressure">Blood Pressure (mmHg):</label>
+        <select id="bloodPressure" name="bloodPressure">
+            <option value="normal">Normal</option>
+            <option value="pre-hypertension">Pre-Hypertension</option>
+            <option value="stage-1-hypertension">Stage 1 Hypertension</option>
+            <option value="stage-2-hypertension">Stage 2 Hypertension</option>
+        </select>
+        <br>
+
+        <label for="heartRate">Heart Rate (bpm):</label>
+        <select id="heartRate" name="heartRate">
+            <option value="normal">Normal</option>
+            <option value="elevated">Elevated</option>
+            <option value="high">High</option>
+        </select>
+        <br>
+
+        <label for="stepsWalked">Steps Walked:</label>
+        <select id="stepsWalked" name="stepsWalked">
+            <option value="less-than-5000">Less than 5000</option>
+            <option value="5000-10000">5000-10000</option>
+            <option value="more-than-10000">More than 10000</option>
+        </select>
+        <br>
+
+        <button type="button" onclick="predict()">Predict</button>
+    </form>
+
+    <div id="result">
+        <p>Mood: <span id="mood"></span></p>
+        <p>Depression Risk: <span id="depressionRisk"></span></p>
+    </div>
+
+    <!-- Other HTML content above -->
+<script src="/static/script.js"></script>
 </body>
 </html>
+
